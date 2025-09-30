@@ -1,0 +1,26 @@
+import java.util.*;
+public class BankingSystem{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();
+        int accountNo = sc.nextInt();
+        double balance = sc.nextDouble();
+        double deposit = sc.nextDouble();
+        double withdraw = sc.nextDouble();
+
+        if(accountNo <=0 || balance < 0 || deposit < 0
+        || withdraw <0){
+            System.out.println("invalid input values ");
+        }
+        balance = balance + deposit;
+
+        if(withdraw > balance){
+            System.out.println("insufficient balance");
+        }
+        else{
+            balance = balance - withdraw ;
+            System.out.println(balance);
+        }
+    }
+}
